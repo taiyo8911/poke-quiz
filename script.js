@@ -40,14 +40,14 @@ function checkAnswer() {
     if (input_elem === ja_name) {
         judge_elem.innerText = "正解";
         img_elem.style.filter = "brightness(100%)"; // 画像をカラー表示にする
-        setTimeout(reset, 3000);
+        setTimeout(reset, 5000);
     } else {
         judge_elem.innerText = "不正解";
-        setTimeout(reset, 3000);
+        setTimeout(reset, 5000);
     }
 
     // 5秒後に再び画像を表示する
-    setTimeout(display, 5000);
+    setTimeout(display, 7000);
 }
 
 
