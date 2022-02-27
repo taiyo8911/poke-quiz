@@ -5,26 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>初代ポケモンシルエットクイズ</title>
+    <title>Pokeシルエット</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <style>
-        img {
-            filter: brightness(0%);
-            width: 40%;
+        body {
+            background-color: rgb(236, 236, 164);
         }
 
         header {
-            max-height: 10vh;
+            padding-top: 50px;
         }
 
         h1 {
-            font-size: 24px;
+            background-color: rgb(1, 1, 1);
+            color: white;
+            line-height: 50px;
         }
 
-        main {
-            max-height: 30vh;
+        img {
+            filter: brightness(0%);
+        }
+
+        #image_parent {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+        }
+
+        #form {
+            position: relative;
+            top: 140px;
         }
     </style>
 </head>
@@ -32,16 +46,16 @@
 <body>
     <div class="container text-center">
         <header>
-            <h1 class="pt-4">初代ポケモン シルエットクイズ</h1>
+            <h1>Pokeシルエット</h1>
         </header>
 
-        <main>
-            <p class="lead">このポケモンは？</p>
-            <form>
+        <main class="pt-5">
+            <p>このポケモンは？</p>
+            <div id="image_parent" class="my-2"></div>
+            <form id="form" onsubmit="checkAnswer(); return false;">
                 <input id="text" type="text" autocomplete="off" maxlength="10" autofocus>
-                <input type="submit" value="答え合わせ" onclick="checkAnswer()">
+                <input type="submit" value="答え合わせ">
             </form>
-            <div id="image_div"></div>
             <div id="judge"></div>
         </main>
     </div>
