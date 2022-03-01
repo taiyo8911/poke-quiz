@@ -14,10 +14,6 @@
             background-color: rgb(236, 236, 164);
         }
 
-        header {
-            padding-top: 50px;
-        }
-
         h1 {
             background-color: rgb(1, 1, 1);
             color: white;
@@ -28,15 +24,24 @@
             filter: brightness(0%);
         }
 
-        #image_parent {
+        #image {
+            /* 左上起点の絶対配置 */
             position: absolute;
             left: 50%;
+            /* 中央に配置 */
             transform: translateX(-50%);
             -webkit-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
         }
 
         #form {
+            /* 本来位置からの相対配置 */
+            position: relative;
+            top: 120px;
+        }
+
+        #judge {
+            /* 本来位置からの相対配置 */
             position: relative;
             top: 140px;
         }
@@ -44,16 +49,17 @@
 </head>
 
 <body>
+    <header>
+        <h1 class="text-center">Pokeシルエット</h1>
+    </header>
     <div class="container text-center">
-        <header>
-            <h1>Pokeシルエット</h1>
-        </header>
 
-        <main class="pt-5">
+        <main class="pt-3">
             <p>このポケモンは？</p>
-            <div id="image_parent" class="my-2"></div>
+            <div id="image" class="my-1"></div>
             <form id="form" onsubmit="checkAnswer(); return false;">
-                <input id="text" type="text" autocomplete="off" maxlength="10" autofocus>
+                <label>こたえ</label>
+                <input id="answer" type="text" autocomplete="off" maxlength="10" autofocus>
                 <input type="submit" value="答え合わせ">
             </form>
             <div id="judge"></div>
