@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(236, 236, 164);
+}
+
+h1 {
+    background-color: rgb(1, 1, 1);
+    color: white;
+    line-height: 54px;
+}
+
+img {
+    /* 画像をシルエットにする */
+    filter: brightness(0%);
+}
+
+.image {
+    /* 左上起点の絶対配置 */
+    position: absolute;
+    left: 50%;
+    /* 中央に配置 */
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+.form {
+    /* 本来位置からの相対配置 */
+    position: relative;
+    top: 120px;
+}
+
+.judge {
+    /* 本来位置からの相対配置 */
+    position: relative;
+    top: 140px;
+}
